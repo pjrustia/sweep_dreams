@@ -7,3 +7,4 @@ export async function api(path, options={}) {
   return data;
 }
 export function remember(access) { try { localStorage.setItem('sweep-access', JSON.stringify(access)); } catch {} }
+export const clock = t => { const [h, m] = t.split(':').map(Number); return (h % 12 || 12) + ':' + String(m).padStart(2, '0') + ' ' + (h < 12 ? 'AM' : 'PM'); };
